@@ -21,6 +21,7 @@
 .imageContainer {
   display: flex;
   flex-direction: column;
+  max-height: 100vh;
 }
 
 .bgImage {
@@ -110,7 +111,7 @@ footer button:hover {
   padding: 1rem;
   /* overflow-y: scroll; */
   height: 100%;
-  width: 90%;
+  width: 80%;
   max-width: 800px;
   margin: auto;
   background: #030615;
@@ -178,10 +179,12 @@ footer button:hover {
     position: relative;
     inset: unset;
     min-width: 30%;
+    max-height: 100vh;
     box-shadow: 0 0 40px 1px #030615;
   }
 
   .sidebarContents {
     margin: unset;
+    width: 100%;
   }
 }
