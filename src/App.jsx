@@ -5,7 +5,6 @@ import { useState, useEffect } from "react"
 
 function App() {
   const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   
   function handleToggleModal() {
@@ -15,7 +14,6 @@ function App() {
   useEffect(() => {
     async function fectchAPIData() {
       const NASA_KEY = import.meta.env.VITE_NASA_API_KEY
-      console.log(NASA_KEY);
       const url = 'https://api.nasa.gov/planetary/apod' + `?api_key=${NASA_KEY}`
 
       const today = (new Date()).toDateString();
@@ -43,7 +41,7 @@ function App() {
 
   return (
     <>
-      {data ? (<Main data={data}/>): (
+      {data ? (<Main data={data} handleToggleModal={handleToggleModal} showModal={showModal}/>): (
         <div className="loadingState">
           <i className="fa-solid fa-gear"></i>
         </div>
